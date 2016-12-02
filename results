@@ -14,4 +14,10 @@ Mascara 7*7  : 5095  ms
 Mascara 5*5  : 3068  ms
 Mascara 3*3  : 1907  ms
 
+Parallel CUDA
+
+Mascara 11*11: 248 ms
+Mascara 7*7  : 137  ms
+Mascara 5*5  : 90 ms
+Mascara 3*3  : 73 ms
 
