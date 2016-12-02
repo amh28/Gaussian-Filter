@@ -1,0 +1,17 @@
+ironman, 50.3 Mb, 4096x4096
+
+Sequential: 
+
+Mascara 11*11: 39697 ms
+Mascara 7*7  : 16887 ms
+Mascara 5*5  : 10545 ms
+Mascara 3*3  : 5794  ms
+
+Parallel(8 procesadores al 100 %):
+ 
+Mascara 11*11: 10732 ms
+Mascara 7*7  : 5095  ms
+Mascara 5*5  : 3068  ms
+Mascara 3*3  : 1907  ms
+
+
