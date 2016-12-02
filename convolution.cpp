@@ -2,7 +2,7 @@
 #include <iostream>
 #include "CImg.h"
 #include <math.h>
-#include <omp.h>
+#include <chrono>
 
 using namespace std;
 using namespace cimg_library;
@@ -59,7 +59,7 @@ IF convolution(IC img, int mask[s][s], int size)
 
 int main()
 {
-	IC img("parrot.ppm");
+	IC img("ironman.bmp");
 	
 	int gx[3][3] = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
 	int gy[3][3] = { { 1, 0, -1 }, { 2, 0, -2 }, { 1, 0, -1 } };
@@ -70,12 +70,22 @@ int main()
 					 { 1,1, 1, 1,1,1,1,1,1,1,1 }, {1,1, 1, 1,1,1,1,1,1,1,1}, {1,1, 1, 1,1,1,1,1,1,1,1}, {1,1, 1, 1,1,1,1,1,1,1,1}, {1,1,1,1,1,1,1,1,1,1,1}, {1,1,1,1,1,1,1,1,1,1,1} };
 	
 	
+	auto start_time = std::chrono::high_resolution_clock::now();
 	//IF smooth = convolution<3>(img,s3,3);
-	//IF smooth = convolution<5>(img,s5,5);
+	IF smooth = convolution<5>(img,s5,5);
 	//IF smooth = convolution<7>(img,s7,7);
 	//IF smooth = convolution<11>(img,s11,11);
-	//smooth.display();
-	//img.display();
+	
+	auto end_time = std::chrono::high_resolution_clock::now();
+	auto time = end_time - start_time;
+	std::cout << "Secuential took " << std::chrono::duration_cast<std::chrono::milliseconds>(time).count() << " to run.\n";	
+
+	
+	smooth.display();
+	img.display();
+	
+	
+	
 	
 	return 0;
 	
